@@ -1,8 +1,6 @@
 # Projeto Era Nuclear: Dados e Acontecimentos
 
 
-*(Dica: Tire um print da sua tela, envie para um site como o [Imgur](https://imgur.com/upload) e cole o link direto aqui para exibir uma imagem do seu projeto!)*
-
 Este é um projeto web interativo e educativo sobre a **Corrida Armamentista e o Medo Nuclear** durante a Guerra Fria. O objetivo é transformar dados históricos e números complexos em visualizações impactantes e fáceis de entender, demonstrando a escala do conflito e seus momentos mais críticos.
 
 ## 🚀 Funcionalidades
