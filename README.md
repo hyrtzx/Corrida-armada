@@ -36,4 +36,4 @@ O site é uma *Single Page Application* (SPA) com uma navegação responsiva que
 
 ## 📊 Fontes de Dados
 
-Os dados numéricos dos arsenais são compilações e aproximações baseadas em informações públicas de fontes como a **Federation of American Scientists (FAS)** e o **Stockholm International Peace Research Institute (SIPRI)**, adaptados para os fins educacionais deste projeto.
+Os dados numéricos dos arsenais são compilações e aproximações baseadas em informações públicas de fontes como a **Federation of American Scientists (FAS)** e o **Stockholm International Peace Research Institute (SIPRI)**, adaptados para os fins educacionais deste projeto!
