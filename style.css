@@ -1,0 +1,89 @@
+/* --- Importando Fontes do Google --- */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@800&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/* --- Variáveis da Paleta de Cores --- */
+:root {
+    --cor-fundo: #010409;
+    --cor-elemento: #0d1117;
+    --cor-borda: #21262d;
+    --cor-texto-principal: #e6edf3;
+    --cor-texto-secundario: #7d8590;
+    --cor-destaque: #3f7de8;
+    --cor-brilho-destaque: #6d9eef;
+    --cor-alerta: #e83a73;
+}
+
+/* --- Estilos Globais --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: var(--cor-fundo); color: var(--cor-texto-principal); font-family: 'Source Sans Pro', sans-serif; overflow-x: hidden; }
+
+/* --- HEADER FIXO E MINIMALISTA --- */
+header { position: sticky; top: 0; width: 100%; z-index: 1002; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 0 5%; background: var(--cor-elemento); height: 8vh; border-bottom: 1px solid var(--cor-borda); }
+.logo { font-family: 'Exo 2', sans-serif; font-size: 24px; text-transform: uppercase; letter-spacing: 4px; color: var(--cor-texto-principal); text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.05), 1px 1px 1px rgba(0, 0, 0, 0.5); text-decoration: none; }
+
+/* --- PAINEL DE NAVEGAÇÃO DESLIZANTE --- */
+.nav-list { position: fixed; top: 0; right: 0; width: 320px; height: 100vh; background: rgba(13, 17, 23, 0.7); backdrop-filter: blur(10px); z-index: 1000; list-style: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+.nav-list.active { transform: translateX(0); }
+.nav-list li { opacity: 0; list-style: none; width: 80%; }
+.nav-link { display: block; padding: 12px 20px; border-radius: 10px; background-color: #1c2128; color: var(--cor-texto-secundario); text-decoration: none; font-family: 'Source Sans Pro', sans-serif; font-weight: 700; letter-spacing: 1px; border: 1px solid var(--cor-borda); box-shadow: inset 0 0 2px 0 rgba(255, 255, 255, 0.05); transition: all 0.3s ease; text-align: center; }
+.nav-link:hover { color: #fff; border-color: var(--cor-destaque); box-shadow: 0 0 15px var(--cor-destaque), inset 0 0 2px 0 rgba(255, 255, 255, 0.1); transform: scale(1.05); }
+.nav-link.active { color: #fff; background-color: var(--cor-destaque); border-color: var(--cor-brilho-destaque); box-shadow: 0 0 20px var(--cor-destaque); }
+
+/* --- ÍCONE DO MENU (HAMBÚRGUER/X) --- */
+.mobile-menu { display: block; cursor: pointer; z-index: 1001; }
+.mobile-menu div { width: 32px; height: 2px; background: #fff; margin: 8px; transition: 0.3s; }
+.mobile-menu.active .line1 { transform: rotate(-45deg) translate(-8px, 8px); }
+.mobile-menu.active .line2 { opacity: 0; }
+.mobile-menu.active .line3 { transform: rotate(45deg) translate(-5px, -7px); }
+@keyframes navLinkFade { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+
+/* --- Conteúdo Principal --- */
+main { padding: 40px 20px; }
+.content-page { display: none; max-width: 900px; margin: 0 auto; }
+.content-page.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.content-page h2 { font-family: 'Exo 2', sans-serif; color: var(--cor-brilho-destaque); text-align: center; font-size: 2.5em; margin-bottom: 20px; text-shadow: 0 0 15px var(--cor-brilho-destaque); }
+.explanation { color: var(--cor-texto-secundario); font-family: 'Source Sans Pro', sans-serif; font-size: 1.2em; line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto 40px auto; }
+.chart-container { position: relative; width: 100%; height: 60vh; max-height: 500px; padding: 20px; background: var(--cor-elemento); border-radius: 8px; border: 1px solid var(--cor-borda); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+.chart-container canvas { filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3)); }
+
+/* --- Cards de Acontecimentos (COM IMAGEM CORRIGIDA) --- */
+#acontecimentos { display: none; flex-direction: column; gap: 40px; }
+#acontecimentos.active { display: flex; }
+.event-card { background-color: var(--cor-elemento); border: 1px solid var(--cor-borda); border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); overflow: hidden; display: flex; flex-direction: column; align-items: stretch; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.event-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
+.event-card img {
+    width: 100%;
+    /* MUDANÇA PRINCIPAL AQUI */
+    max-height: 450px; /* Limita a altura máxima da imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.event-card:hover img { opacity: 1; }
+.event-text { padding: 30px; width: auto; }
+.event-text h3 { font-family: 'Exo 2', sans-serif; color: var(--cor-brilho-destaque); margin-top: 0; margin-bottom: 15px; font-size: 1.8em; }
+.event-text p { font-family: 'Source Sans Pro', sans-serif; line-height: 1.7; font-size: 1.1em; color: var(--cor-texto-secundario); text-align: justify; }
+
+/* --- Estilos para a página "O Homem que Salvou o Mundo" (COM IMAGEM CORRIGIDA) --- */
+.story-container { background-color: var(--cor-elemento); border: 1px solid var(--cor-borda); padding: 20px; border-radius: 8px; }
+.story-container p { font-family: 'Source Sans Pro', sans-serif; font-size: 1.1em; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+.story-container strong { color: var(--cor-brilho-destaque); font-weight: 700; }
+.story-header { text-align: center; } /* Para centralizar a imagem */
+.story-image {
+    /* MUDANÇA PRINCIPAL AQUI */
+    display: inline-block; /* Permite centralização com margin auto */
+    width: 100%;
+    max-width: 600px; /* Limita a largura máxima da imagem */
+    max-height: 450px; /* Limita a altura máxima */
+    object-fit: cover;
+    margin: 0 auto 30px auto; /* Centraliza e adiciona espaço embaixo */
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.quote { font-size: 1.2em; font-style: italic; padding: 15px; border-left: 4px solid var(--cor-destaque); margin: 30px 20px; color: var(--cor-texto-principal); background-color: rgba(0, 0, 0, 0.2); border-radius: 5px; }
+
+/* Responsividade Geral */
+@media (max-width: 768px) { .quote { margin-left: 0; margin-right: 0; } }

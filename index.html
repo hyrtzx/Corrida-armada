@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Era Nuclear: Dados e Acontecimentos</title>
+    <!-- Atualizando a versão para forçar a atualização do cache -->
+    <link rel="stylesheet" href="style.css?v=1.6">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="#">Era Nuclear</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link active" data-target="acontecimentos">Acontecimentos</a></li>
+                <li><a href="#" class="nav-link" data-target="section-petrov">O Homem que Salvou o Mundo</a></li>
+                <li><a href="#" class="nav-link" data-target="section-total">Arsenal Total</a></li>
+                <li><a href="#" class="nav-link" data-target="section-triade">Tríade Nuclear</a></li>
+                <li><a href="#" class="nav-link" data-target="section-poder">Poder Destrutivo</a></li>
+                <li><a href="#" class="nav-link" data-target="section-arsenais-atuais">Arsenais Atuais</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ACONTECIMENTOS -->
+        <section id="acontecimentos" class="content-page active">
+            <div class="event-card">
+                <img src="img/destruicao-hiroshima.jpg" alt="Destruição de Hiroshima">
+                <div class="event-text">
+                    <h3>A Consequência: Hiroshima (1945)</h3>
+                    <p>Em 6 de agosto de 1945, a bomba "Little Boy" foi lançada, matando instantaneamente cerca de 80.000 pessoas...</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="img/teste-nuclear.jpg" alt="Teste nuclear no Atol de Bikini">
+                <div class="event-text">
+                    <h3>A Escalada: Testes Nucleares (Anos 50)</h3>
+                    <p>A detonação de "Castle Bravo" em 1954 foi um erro de cálculo catastrófico...</p>
+                </div>
+            </div>
+             <div class="event-card">
+                <img src="img/tsar-bomba.jpg" alt="A Tsar Bomba em um museu">
+                <div class="event-text">
+                    <h3>O Auge do Poder: A Tsar Bomba (1961)</h3>
+                    <p>Com 50 megatons, a Tsar foi um monstro simbólico. Sua explosão foi tão potente que a onda de choque deu três voltas na Terra...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O HOMEM QUE SALVOU O MUNDO (com a imagem restaurada) -->
+        <section id="section-petrov" class="content-page">
+            <h2>O HOMEM QUE SALVOU O MUNDO</h2>
+            <div class="story-container">
+                <!-- Wrapper para a imagem para facilitar a centralização -->
+                <div class="story-header">
+                    <img src="img/Stanislav Petrov.jpg" alt="Stanislav Petrov" class="story-image">
+                <p>Em 26 de setembro de 1983, no auge da tensão da Guerra Fria, o Tenente-Coronel <strong>Stanislav Petrov</strong> era o oficial de plantão em um bunker secreto perto de Moscou...</p>
+                <blockquote class="quote">"A sirene berrou, mas eu fiquei sentado por alguns segundos, olhando para a grande tela vermelha com a palavra 'LANÇAMENTO'."</blockquote>
+                <!-- CORREÇÃO AQUI: trocando ** por <strong> -->
+                <p>Desobedecendo ao protocolo e confiando em sua intuição, Petrov reportou o alerta como um <strong>alarme falso do sistema</strong>...</p>
+            </div>
+        </section>
+        </section>
+        
+        <!-- SEÇÕES DOS GRÁFICOS (continuam iguais) -->
+        <section id="section-total" class="content-page">
+            <h2>NÍVEL DE AMEAÇA: OVERKILL</h2>
+            <p class="explanation">Poder suficiente para destruir cada cidade importante do planeta dezenas de vezes...</p>
+            <div class="chart-container"><canvas id="arsenalTotalChart"></canvas></div>
+        </section>
+        <section id="section-triade" class="content-page">
+            <h2>ATAQUE IMPOSSÍVEL DE PARAR</h2>
+            <p class="explanation">A Tríade Nuclear foi criada para ser um ataque indefensável...</p>
+            <div class="chart-container"><canvas id="triadeChart"></canvas></div>
+        </section>
+        <section id="section-poder" class="content-page">
+            <h2>A DEFINIÇÃO DE APOCALIPSE</h2>
+            <p class="explanation">A Tsar Bomba, sozinha, tinha mais poder que TODAS as bombas da Segunda Guerra Mundial combinadas...</p>
+            <div class="chart-container"><canvas id="poderDestrutivoChart"></canvas></div>
+        </section>
+        <section id="section-arsenais-atuais" class="content-page">
+            <h2>A AMEAÇA HOJE: ARSENAIS ATUAIS</h2>
+            <p class="explanation">Apesar das reduções desde a Guerra Fria, ainda existem mais de 12.000 ogivas nucleares no mundo...</p>
+            <div class="chart-container"><canvas id="arsenaisAtuaisChart"></canvas></div>
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
